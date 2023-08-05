@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+/**
+ *main -  multiplies two numbers.
+ *@argc: Integer
+ *@argv: String
+ *Return: Always 0
+ */
+
+int main(int argc, char const *argv[])
+{
+    int res;
+
+    if (argc == 3)
+        res = atoi(argv[1]) * atoi(argv[2]);
+    else
+        printf("Error\n");
+
+    return (0);
+}
