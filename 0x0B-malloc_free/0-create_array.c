@@ -9,16 +9,18 @@
 
 char *create_array(unsigned int size, char c)
 {
+    char *table;
+    
+    unsigned int i;
+
     if (size == 0)
         return NULL;
 
-    char *table;
     table = malloc(sizeof(char) * size);
 
     if (table == NULL)
         return NULL;
 
-    unsigned int i;
 
     i = 0;
 
