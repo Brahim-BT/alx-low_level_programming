@@ -12,12 +12,15 @@ char *create_array(unsigned int size, char c)
     if (size == 0)
         return NULL;
 
-    char *table = malloc(sizeof(char) * size);
+    char *table;
+    table = malloc(sizeof(char) * size);
 
     if (table == NULL)
         return NULL;
 
-    int i = 0;
+    int i;
+
+    i = 0;
 
     while (i < size)
     {
