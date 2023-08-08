@@ -18,7 +18,7 @@ char *create_array(unsigned int size, char c)
     if (table == NULL)
         return NULL;
 
-    int i;
+    unsigned int i;
 
     i = 0;
 
@@ -28,5 +28,5 @@ char *create_array(unsigned int size, char c)
         i++;
     }
 
-    return table;
+    return (table);
 }
