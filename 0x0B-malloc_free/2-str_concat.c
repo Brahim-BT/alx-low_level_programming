@@ -11,51 +11,33 @@ char *str_concat(char *s1, char *s2)
 {
     char *catstr;
 
-    int size;
+    int size, i = 0, j = 0, k = 0, l = 0;
 
-    int i;
-
-    int j;
-
-    size = 0;
-    if (s1 == NULL && s2 == NULL)
-        return NULL;
-    else if (s1 != NULL && s2 == NULL)
+    if (s1 != NULL)
     {
-        while (s1[size] != '\0')
-            size++;
-        catstr = malloc(sizeof(char) * size);
-        if (catstr == NULL)
-            return NULL;
-        for (i = 0; i < size; i++)
-            catstr[i] = s1[i];
+        while (s1[i] != '\0')
+            i++;
     }
-    else if (s1 == NULL && s2 != NULL)
+    size = i;
+    if (s2 != NULL)
     {
-        while (s2[size] != '\0')
-            size++;
-        catstr = malloc(sizeof(char) * size);
-        if (catstr == NULL)
-            return NULL;
-        for (i = 0; i < size; i++)
-            catstr[i] = s2[i];
+        while (s2[j] != '\0')
+            j++;
     }
-    else
+    size += j;
+    catstr = malloc(sizeof(char) * size + 1);
+    if (catstr == NULL)
+        return (NULL);
+    while (k < i)
     {
-        while (s1[size] != '\0')
-            size++;
-        j = size + 1;
-        while (s2[size] != '\0')
-            size++;
-        catstr = malloc(sizeof(char) * size);
-        if (catstr == NULL)
-            return NULL;
-        for (i = 0; i < j - 1; i++)
-            catstr[i] = s1[i];
-        for (i = 0; i < size; i++)
-            catstr[i] = s2[i];
+        catstr[k] = s1[k];
+        k++;
     }
-    size++;
-    catstr[size] = '\0';
-    return catstr;
+    while (l < j)
+    {
+        catstr[k] = s2[l];
+        k++;
+        l++;
+    }
+    return (catstr);
 }
