@@ -12,22 +12,22 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
     char *mypointer;
 
-    unsigned int len1 = 0, len2 = 0, i, j;
+    unsigned int size1 = 0, size2 = 0, i, j;
 
     if (!s1)
         s1 = "";
     if (!s2)
         s2 = "";
-    while (s1[len1])
-        len1++;
-    while (s2[len2])
-        len2++;
-    if (n > len2)
-        n = len2;
-    mypointer = malloc(len1 + n + 1);
+    while (s1[size1])
+        size1++;
+    while (s2[size2])
+        size2++;
+    if (n > size2)
+        n = size2;
+    mypointer = malloc(size1 + n + 1);
     if (mypointer == NULL)
         return (NULL);
-    for (i = 0; i < len1; i++)
+    for (i = 0; i < size1; i++)
         mypointer[i] = s1[i];
     for (j = 0; j < n; j++)
     {
