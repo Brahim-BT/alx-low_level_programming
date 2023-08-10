@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - check the code
+ * malloc_checked - allocates memory using malloc
  *@b: an integer
  * Return: a pointer or else 98.
  */
