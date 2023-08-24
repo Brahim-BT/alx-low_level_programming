@@ -3,6 +3,7 @@
 /**
  * add_node - this function will adds a new node at the beginning of a list_t list.
  * @h: the list to be printed
+ * @str: string
  * Return: list_t
  */
 
@@ -17,5 +18,5 @@ list_t *add_node(list_t **head, const char *str)
     newnode->len = strlen(str);
     newnode->next = (*head);
     (*head) = newnode;
-    return (newnode);
+    return (*head);
 }
