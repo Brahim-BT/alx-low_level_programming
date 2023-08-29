@@ -1,25 +1,16 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
 
-size_t print_listint(const listint_t *h)
+size_t listint_len(const listint_t *h)
 {
     int n;
 
-    n = 0;
-    while ((*h).next != NULL)
-    {
-        printf("%d\n", (*h).n);
-        n++;
+    for (n = 0; (*h).next != NULL; n++)
         h = (*h).next;
-    }
-    printf("%d\n", (*h).n);
     n++;
     return (n);
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
     listint_t *head;
     listint_t *new;
@@ -36,7 +27,7 @@ int main(int argc, char const *argv[])
     new->n = 9;
     new->next = head;
     head = new;
-    n = print_listint(head);
+    n = listint_len(head);
     printf("-> %lu elements\n", n);
     free(new);
     return (0);
