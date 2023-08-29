@@ -40,9 +40,27 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
     return (last_node);
 }
 
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+{
+    int i;
+
+    listint_t *node;
+
+    node = head;
+
+    if (head == NULL)
+        return (NULL);
+    for (i = 0; i < index; i++)
+    {
+        node = node->next;
+    }
+    return (node);
+}
+
 int main()
 {
     listint_t *head;
+    listint_t *node;
 
     head = NULL;
     add_nodeint_end(&head, 0);
@@ -53,6 +71,9 @@ int main()
     add_nodeint_end(&head, 98);
     add_nodeint_end(&head, 402);
     add_nodeint_end(&head, 1024);
+    print_listint(head);
+    node = get_nodeint_at_index(head, 5);
+    printf("%d\n", node->n);
     print_listint(head);
     return (0);
 }
