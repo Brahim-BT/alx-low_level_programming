@@ -8,21 +8,24 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-    int n, i, k;
+    int i = 0, pow = 1;
+    int handler = 0;
 
-    unsigned int decnum;
-
-    if (b == NULL)
+    if (b == 0)
         return (0);
-    n = strlen(b);
-    for (i = n - 1, k = 0, decnum = 0; i >= 0; i--, k++)
+
+    while (b[i] != 0)
     {
-        if (b[i] != '1' && b[i] != '0')
+        if (b[i] != '0' && b[i] != '1')
             return (0);
-        if (b[i] == '1')
-            decnum += power(2, k);
+        i++;
     }
-    return (decnum);
+    for (; i > 0; i--)
+    {
+        handler += (b[i - 1] - '0') * pow;
+        pow *= 2;
+    }
+    return (handler);
 }
 
 /**
