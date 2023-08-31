@@ -42,3 +42,20 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
     }
     return (-1);
 }
+
+/**
+* list_len - returns the length of a given linked list
+* @h: linked list
+* Return: 0
+*/
+size_t list_len(const listint_t *h)
+{
+	int i = 0;
+
+	while (h != 0)
+	{
+		i++;
+		h = h->next;
+	}
+	return (i);
+}
