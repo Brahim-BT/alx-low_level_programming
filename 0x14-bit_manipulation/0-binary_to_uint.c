@@ -17,7 +17,7 @@ unsigned int binary_to_uint(const char *b)
     n = strlen(b);
     for (i = n - 1, k = 0, decnum = 0; i >= 0; i--, k++)
     {
-        if (b[i] != '1' || b[i] != '0')
+        if (b[i] != '1' && b[i] != '0')
             return (0);
         if (b[i] == '1')
             decnum += pow(2, k);
