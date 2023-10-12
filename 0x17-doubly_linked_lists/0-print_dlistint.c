@@ -2,21 +2,21 @@
 
 /**
  * print_dlistint - print the elements of a dlinkedlist
- * @h: pointer to the double linked list
- * Return: integer
+ * @h: pointer to dlinkedlist
+ * Return: number of nodes
  */
 
 size_t print_dlistint(const dlistint_t *h)
 {
-    int n;
+    int i = 0;
+    const dlistint_t *head = h;
 
-    n = 0;
-
-    while (h != NULL)
+    while (head != NULL)
     {
-        printf("%d", (*h).n);
-        h = (*h).next;
-        n++;
+        printf("%d\n", head->n);
+        head = head->next;
+        i++;
     }
-    return (n);
+
+    return (i);
 }
