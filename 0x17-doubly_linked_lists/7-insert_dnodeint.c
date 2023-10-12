@@ -3,7 +3,7 @@
 /**
  * insert_dnodeint_at_index - inserts a new node at a given position.
  * @head: pointer to dlinkedlist
- * @index: index of node
+ * @idx: index of node
  * @n: integer
  * Return: pointer
  */
