@@ -1,10 +1,9 @@
 #include "lists.h"
 
 /**
- * add_dnodeint_end - adds a new node at the end of a dlistint_t list.
+ * free_dlistint - frees a dlistint_t list.
  * @head: pointer to dlinkedlist
- * @n: the value of new node
- * Return: pointer
+ * Return: void
  */
 
 void free_dlistint(dlistint_t *head)
